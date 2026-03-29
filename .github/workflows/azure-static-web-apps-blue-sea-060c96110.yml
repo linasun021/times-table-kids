@@ -22,6 +22,8 @@ jobs:
         with:
           submodules: true
           lfs: false
+      - name: Mark workspace as safe
+        run: git config --global --add safe.directory $GITHUB_WORKSPACE
       - name: Install OIDC Client from Core Package
         run: npm install @actions/core@1.6.0 @actions/http-client
       - name: Get Id Token
